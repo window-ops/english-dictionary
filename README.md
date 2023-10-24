@@ -1,3 +1,3 @@
 # English Dictionary
 
-A simple english dictionary.
+A quick and simple english dictionary.
