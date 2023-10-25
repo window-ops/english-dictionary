@@ -2,7 +2,6 @@ const wordInput = document.getElementById('word-input');
 const submitBtn = document.getElementById('submit-btn');
 const word = document.getElementById('word');
 const phonetics = document.getElementById('phonetics');
-const origin = document.getElementById('origin');
 const meanings = document.getElementById('meanings');
 const examples = document.getElementById('examples');
 const synonyms = document.getElementById('synonyms');
@@ -37,19 +36,15 @@ submitBtn.addEventListener('click', () => {
               </li>
               <ol>`;
       for (let j = 0; j < definitions.length; j++) {
-        meaningText += `
-                <li>${definitions[j].definition}</li>`;
+        meaningText += `<li>${definitions[j].definition}</li>`;
         if (definitions[j].example) {
-          exampleText += `
-                <li>${definitions[j].example}</li>`;
+          exampleText += `<li>${definitions[j].example}</li>`;
         }
         if (definitions[j].synonyms && definitions[j].synonyms.length > 0) {
-          synonymText += `
-                <li>${definitions[j].synonyms.join(', ')}</li>`;
+          synonymText += `<li>${definitions[j].synonyms.join(', ')}</li>`;
         }
         if (definitions[j].antonyms && definitions[j].antonyms.length > 0) {
-          antonymText += `
-                <li>${definitions[j].antonyms.join(', ')}</li>`;
+          antonymText += `<li>${definitions[j].antonyms.join(', ')}</li>`;
         }
       }
       meaningText += ' </ol>';
@@ -62,7 +57,6 @@ submitBtn.addEventListener('click', () => {
     if (phoneticsArray && phoneticsArray.length > 0) {
       for (let i = 0; i < phoneticsArray.length; i++) {
         const phoneticText = phoneticsArray[i].text;
-        const phoneticAudio = phoneticsArray[i].audio;
         const phoneticItem = document.createElement('li');
         phoneticItem.innerHTML = `${phoneticText}`;
         phonetics.appendChild(phoneticItem);
